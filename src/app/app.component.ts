@@ -7,7 +7,10 @@ import {bounce, shake} from "ng-animate";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations:[
-    trigger('bounce', [transition(':increment', useAnimation(bounce))]),
+    trigger('bounce', [transition(':increment', useAnimation(bounce, {
+      // Set the duration to 3 seconds and delay to 1 second
+      params: { timing: 3, delay: 1 }
+    }))]),
     trigger('shake', [transition(':decrement', useAnimation(shake))])
   ]
 })
